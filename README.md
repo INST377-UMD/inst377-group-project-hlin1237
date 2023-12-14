@@ -2,7 +2,7 @@
 
 # Crime Rate Analysis
 
-# Project Description
+# Project Description:
 ## Our project will present data and some visualizations about the crime rates that are occurring in PG County
 
 # Everyone is welcome to look at our project 
@@ -14,4 +14,4 @@
 ## Install Depencies: npm i, Start App: npm start, Stop App: Ctrl + C or Cmd + C
 
 # Group Members: 
-## vHumin Lin, Micheal Horace, Steven Ton
+## Humin Lin, Micheal Horace, Steven Ton
