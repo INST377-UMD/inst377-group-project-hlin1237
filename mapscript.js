@@ -2,13 +2,23 @@
 const appToken = "8bXBtSpWDBQfz2iTlipUrmqeJ";
 
 //Map for each incident
-const map = L.map('map').setView([20 , -20], 2);
+// 38.784915, -76.872117
 
-const tile = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-  maxZoom: 19,
-  attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-}).addTo(map);
+async function incidentMap() {
+  const map = L.map('map', {
+    center: [38.784915 , -76.872117],
+    zoom: 10
+  });
 
+  const tile = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+  }).addTo(map);
+
+  const marker = L.map(38.95588465034962,-76.82331602275372).addTo(map)
+}
+
+window.onload = incidentMap
 // Keep track of the last retrieved date
 let lastRetrievedDate = new Date();
 
