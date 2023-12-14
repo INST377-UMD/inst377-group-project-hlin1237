@@ -1,6 +1,14 @@
 // Replace "YOURAPPTOKENHERE" with your actual app token
 const appToken = "8bXBtSpWDBQfz2iTlipUrmqeJ";
 
+//Map for each incident
+const map = L.map('map').setView([20 , -20], 2);
+
+const tile = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  maxZoom: 19,
+  attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+}).addTo(map);
+
 // Keep track of the last retrieved date
 let lastRetrievedDate = new Date();
 
