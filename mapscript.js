@@ -36,10 +36,16 @@ async function incidentMap() {
     [38.535481, -76.675549],
   ];
 
-  // Create a red polyline with the defined coordinates
-  var polyline = L.polyline(PrinceGeorgeCounty, { color: "red" }).addTo(
+  // Create a red polygom with the defined coordinates
+  var polygon = L.polygon(PrinceGeorgeCounty, { color: "red" }).addTo(
     map
   );
+  // Add a click event listener to the polygon
+polygon.on('click', function () {
+  // Redirect to a different page when the polygon is clicked
+  window.location.href = 'detail_incident.html';
+});
+
 
   // Function to shuffle array elements
   function shuffleArray(array) {
@@ -77,8 +83,8 @@ async function incidentMap() {
     })
     .catch((error) => console.error("Error fetching data:", error));
 
-  // Zoom the map to fit the bounds of the polyline
-  map.fitBounds(polyline.getBounds());
+  // Zoom the map to fit the bounds of the polygon
+  map.fitBounds(polygon.getBounds());
 }
 
 window.onload = incidentMap;
