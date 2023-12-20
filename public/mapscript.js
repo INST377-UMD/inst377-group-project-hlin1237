@@ -47,7 +47,7 @@ polygon.on('click', function () {
 });
 
   // Function to shuffle array elements
-  async function shuffleArray(array) {
+  function shuffleArray(array) {
     for (var i = array.length - 1; i > 0; i--) {
       var j = Math.floor(Math.random() * (i + 1));
       var temp = array[i];
@@ -56,7 +56,6 @@ polygon.on('click', function () {
     }
     return array;
   }
-
   // Fetch data from the API
   fetch("https://data.princegeorgescountymd.gov/resource/xjru-idbe.json?$limit=50&$$app_token=" + appToken) 
     .then((response) => response.json())
@@ -65,7 +64,7 @@ polygon.on('click', function () {
       var shuffledData = shuffleArray(data);
 
       // Create markers with popups for the unique incidents
-      for (var i = 0; i < shuffledData.length; i++) {
+      for (var i = 0; i < 5; i++) {
         var incident = shuffledData[i];
         var lat = parseFloat(incident.latitude);
         var lon = parseFloat(incident.longitude);

@@ -1,6 +1,5 @@
 const express = require('express');
 var bodyParser = require('body-parser');
-const supabaseClient = require('@supabase/supabase-js');
 const app = express();
 const port = 4000;
 app.use(bodyParser.json())
