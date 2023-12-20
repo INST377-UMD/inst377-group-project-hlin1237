@@ -1,9 +1,9 @@
-var host = window.location.origin;
-
 // Replace "YOURAPPTOKENHERE" with your actual app token
 const appToken = "8bXBtSpWDBQfz2iTlipUrmqeJ";
 
 // Map for each incident
+// 38.784915, -76.872117
+
 async function incidentMap() {
   const map = L.map('map', {
     center: [38.784915, -76.872117],
@@ -36,7 +36,7 @@ async function incidentMap() {
     [38.535481, -76.675549],
   ];
 
-  // Create a red polygon with the defined coordinates
+  // Create a red polygom with the defined coordinates
   var polygon = L.polygon(PrinceGeorgeCounty, { color: "red" }).addTo(
     map
   );
@@ -45,6 +45,7 @@ polygon.on('click', function () {
   // Redirect to a different page when the polygon is clicked
   window.location.href = 'detail_incident.html';
 });
+
 
   // Function to shuffle array elements
   function shuffleArray(array) {
@@ -57,7 +58,7 @@ polygon.on('click', function () {
     return array;
   }
   // Fetch data from the API
-  fetch("https://data.princegeorgescountymd.gov/resource/xjru-idbe.json?$limit=50&$$app_token=" + appToken) 
+  fetch("https://data.princegeorgescountymd.gov/resource/xjru-idbe.json?$limit=50&$$app_token=" + appToken)
     .then((response) => response.json())
     .then((data) => {
       // Shuffle the data array to get a random order
@@ -130,6 +131,7 @@ dataType: "json",
   // Loop through the data
   for (let i = 0; i < data.length; i++) {
     const entry = data[i];
+
     // If the list is not full, add the entry
     if (tenObjects.length < 10) {
       tenObjects.push({
