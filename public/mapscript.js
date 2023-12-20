@@ -1,9 +1,9 @@
-var host = window.location.origin;
-
 // Replace "YOURAPPTOKENHERE" with your actual app token
 const appToken = "8bXBtSpWDBQfz2iTlipUrmqeJ";
 
 // Map for each incident
+// 38.784915, -76.872117
+
 async function incidentMap() {
   const map = L.map('map', {
     center: [38.784915, -76.872117],
@@ -36,7 +36,7 @@ async function incidentMap() {
     [38.535481, -76.675549],
   ];
 
-  // Create a red polygon with the defined coordinates
+  // Create a red polygom with the defined coordinates
   var polygon = L.polygon(PrinceGeorgeCounty, { color: "red" }).addTo(
     map
   );
@@ -46,8 +46,9 @@ polygon.on('click', function () {
   window.location.href = 'detail_incident.html';
 });
 
+
   // Function to shuffle array elements
-  async function shuffleArray(array) {
+  function shuffleArray(array) {
     for (var i = array.length - 1; i > 0; i--) {
       var j = Math.floor(Math.random() * (i + 1));
       var temp = array[i];
@@ -58,14 +59,14 @@ polygon.on('click', function () {
   }
 
   // Fetch data from the API
-  fetch("https://data.princegeorgescountymd.gov/resource/xjru-idbe.json?$limit=50&$$app_token=" + appToken) 
+  fetch("https://data.princegeorgescountymd.gov/resource/xjru-idbe.json?$limit=50&$$app_token=" + appToken)
     .then((response) => response.json())
     .then((data) => {
       // Shuffle the data array to get a random order
       var shuffledData = shuffleArray(data);
 
       // Create markers with popups for the unique incidents
-      for (var i = 0; i < shuffledData.length; i++) {
+      for (var i = 0; i < 5; i++) {
         var incident = shuffledData[i];
         var lat = parseFloat(incident.latitude);
         var lon = parseFloat(incident.longitude);
@@ -131,6 +132,7 @@ dataType: "json",
   // Loop through the data
   for (let i = 0; i < data.length; i++) {
     const entry = data[i];
+
     // If the list is not full, add the entry
     if (tenObjects.length < 10) {
       tenObjects.push({
