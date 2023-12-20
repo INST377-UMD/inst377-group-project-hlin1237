@@ -6,8 +6,8 @@
 # Project Description:
 ## Our project leverages the Tyler Data & Insight API to provide real-time data and visualizations on crime rates in PG County. The system focuses on creating an engaging user interface using Node.js, JavaScript, HTML/CSS
 
-#Target Browsers:
-##The application is designed to be compatible with various browsers, including but not limited to Chrome, Firefox, Safari, and Edge. It aims to provide a seamless experience on both iOS and Android devices
+# Target Browsers:
+## The application is designed to be compatible with various browsers, including but not limited to Chrome, Firefox, Safari, and Edge. It aims to provide a seamless experience on both iOS and Android devices
 
 # Target Audience: 
 ## Everyone is welcome to look at our project 
