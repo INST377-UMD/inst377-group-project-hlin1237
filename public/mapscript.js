@@ -1,3 +1,4 @@
+var host = window.location.origin;
 // Replace "YOURAPPTOKENHERE" with your actual app token
 const appToken = "8bXBtSpWDBQfz2iTlipUrmqeJ";
 
@@ -146,7 +147,6 @@ dataType: "json",
       const closestEntry = tenObjects.find((obj) =>
         isCloserToDate(entry.date, obj.date)
       );
-
       // If it is closer, replace the existing entry
       if (closestEntry) {
         closestEntry.incident_case_id = entry.incident_case_id;
@@ -163,7 +163,6 @@ dataType: "json",
   tenObjects.forEach((entry) => {
     // Convert date string to Date object
     const dateFromString = new Date(entry.date);
-
     $("#data-table-body").append(`
     <tr>
       <td>${entry.incident_case_id}</td>
@@ -185,11 +184,9 @@ dataType: "json",
     newIncidents.forEach((incident) => {
       showNewIncidentPopup(incident.date, incident.location);
     });
-
     // Update the last retrieved date
     updateLastRetrievedDate(newIncidents[0].date);
   }
-
   // Now the 'tenObjects' array contains the closest entries to the current date.
   console.log("Ten closest objects:", tenObjects);
 })
